@@ -6,7 +6,7 @@ import { TareaCardComponent } from './components/tarea-card/tarea-card';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, TareaCardComponent], 
-  templateUrl: './app.html',
+  templateUrl: './app.html',      
   styleUrls: ['./app.css']
 })
 export class AppComponent {
