@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TareaCardComponent } from './components/tarea-card/tarea-card';
+import { TareaService } from './services/tarea.service';
 
 @Component({
   selector: 'app-root',
@@ -11,18 +12,13 @@ import { TareaCardComponent } from './components/tarea-card/tarea-card';
 })
 export class AppComponent {
 
-  tareas = [
-    { id: 1, titulo: 'Tarea 1', descripcion: 'HTML', estaCompletada: false, fechaLimite: '2026-05-30' },
-    { id: 2, titulo: 'Tarea 2', descripcion: 'API', estaCompletada: true, fechaLimite: '2026-05-25' },
-    { id: 3, titulo: 'Tarea 3', descripcion: 'Compra', estaCompletada: false, fechaLimite: '2026-06-01' }
-  ];
+  constructor(public tareaService: TareaService) {}
 
   onCompletar(id: number) {
-    const tarea = this.tareas.find(t => t.id === id);
-    if (tarea) tarea.estaCompletada = true;
+    this.tareaService.completar(id);
   }
 
   onEliminar(id: number) {
-    this.tareas = this.tareas.filter(t => t.id !== id);
+    this.tareaService.eliminar(id);
   }
 }

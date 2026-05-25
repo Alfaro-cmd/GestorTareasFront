@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EstadoTareaPipe } from '../../pipes/estado-tarea-pipe';
 import { DiasRestantesPipe } from '../../pipes/dias-restantes-pipe';
+import { OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-tarea-card',
@@ -10,7 +11,7 @@ import { DiasRestantesPipe } from '../../pipes/dias-restantes-pipe';
   templateUrl: './tarea-card.html',
   styleUrls: ['./tarea-card.css']
 })
-export class TareaCardComponent {
+export class TareaCardComponent implements OnChanges {
 
   @Input() tarea: any;
 
@@ -24,4 +25,9 @@ export class TareaCardComponent {
   onEliminar() {
     this.eliminar.emit(this.tarea.id);
   }
+  ngOnChanges(changes: SimpleChanges) {
+  if (changes['tarea'] && !changes['tarea'].firstChange) {
+    console.log('La tarea cambió');
+  }
+}
 }
