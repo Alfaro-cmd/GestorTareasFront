@@ -1,14 +1,14 @@
 <h1>Gestor de Tareas</h1>
 
-<div class="lista">
 
-  <p><strong>Pendientes:</strong> {{ tareaService.totalPendientes() }}</p>
+<app-login *ngIf="!authService.estaAutenticado()"></app-login>
 
+
+<div *ngIf="authService.estaAutenticado()" class="lista">
   <app-tarea-card
     *ngFor="let tarea of tareaService.tareas()"
     [tarea]="tarea"
     (completar)="onCompletar($event)"
     (eliminar)="onEliminar($event)">
   </app-tarea-card>
-
 </div>

@@ -17,3 +17,17 @@ h1 {
   max-width: 800px;
   margin: 30px auto;
 }
+body {
+  margin: 0;
+  background: #f4f6f8;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+  background: white;
+  color: #2c3e50;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}

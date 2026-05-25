@@ -9,7 +9,9 @@ export class DiasRestantesPipe implements PipeTransform {
     const hoy = new Date();
     const limite = new Date(fecha);
 
-    const diff = Math.ceil((limite.getTime() - hoy.getTime()) / (1000 * 60 * 60 * 24));
+    const diff = Math.ceil(
+      (limite.getTime() - hoy.getTime()) / (1000 * 60 * 60 * 24)
+    );
 
     return diff + ' días restantes';
   }
