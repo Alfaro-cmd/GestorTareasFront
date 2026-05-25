@@ -1,18 +1,19 @@
 body {
-  background-color: #f4f6f8;
-  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f6f8;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.titulo {
+h1 {
   text-align: center;
-  margin: 20px 0;
-  color: #2E75B6;
+  padding: 20px;
+  margin: 0;
+  color: #2c3e50;
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-.contenedor {
-  width: 90%;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+.lista {
+  max-width: 800px;
+  margin: 30px auto;
 }
