@@ -1,17 +1,16 @@
 <div class="card">
   <h3>{{ tarea.titulo }}</h3>
-
-  <p class="estado"
-     [ngClass]="tarea.estaCompletada ? 'completada' : 'pendiente'">
+  
+  <p class="estado" [ngClass]="tarea.estaCompletada ? 'completada' : 'pendiente'">
     {{ tarea.estaCompletada | estadoTarea }}
   </p>
-
+  
   <p class="dias">
     {{ tarea.fechaLimite | diasRestantes }}
   </p>
-
+  
   <div class="botones">
-    <button (click)="onCompletar()">Completar</button>
-    <button class="eliminar" (click)="onEliminar()">Eliminar</button>
+    <button class="btn-completar" (click)="onCompletar()">Completar</button>
+    <button class="btn-eliminar" (click)="onEliminar()">Eliminar</button>
   </div>
 </div>

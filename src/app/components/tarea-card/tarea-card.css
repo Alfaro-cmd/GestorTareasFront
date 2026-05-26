@@ -1,67 +1,91 @@
+
 .card {
   background: #ffffff;
   border-radius: 12px;
-  padding: 18px;
+  padding: 24px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-h3 {
-  margin: 0 0 10px;
+
+.card h3 {
+  margin: 0 0 12px 0;
   color: #2c3e50;
+  font-size: 18px;
+  font-weight: 600;
 }
+
 
 .estado {
   font-weight: bold;
-  margin-bottom: 5px;
+  font-size: 13px;
+  margin-bottom: 8px;
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
 }
 
 .completada {
   color: #27ae60;
+  background-color: rgba(39, 174, 96, 0.1);
 }
 
 .pendiente {
   color: #e67e22;
+  background-color: rgba(230, 126, 34, 0.1);
 }
+
 
 .dias {
   font-size: 14px;
   color: #7f8c8d;
-  margin-bottom: 12px;
+  margin: 0 0 20px 0;
 }
+
 
 .botones {
   display: flex;
-  gap: 10px;
+  gap: 12px;
 }
+
 
 button {
+  flex: 1;
   border: none;
-  padding: 6px 12px;
-  border-radius: 6px;
-  cursor: pointer;
+  padding: 10px 16px;
+  border-radius: 8px;
   font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-button:first-child {
+button:active {
+  transform: scale(0.97);
+}
+
+
+.btn-completar {
   background-color: #3498db;
   color: white;
 }
 
-button:first-child:hover {
+.btn-completar:hover {
   background-color: #2980b9;
 }
 
-.eliminar {
+.btn-eliminar {
   background-color: #e74c3c;
   color: white;
 }
 
-.eliminar:hover {
+.btn-eliminar:hover {
   background-color: #c0392b;
 }

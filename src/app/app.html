@@ -1,14 +1,7 @@
-<h1>Gestor de Tareas</h1>
+<h1>GESTOR DE TAREAS DE JAVI</h1>
 
-
-<app-login *ngIf="!authService.estaAutenticado()"></app-login>
-
-
-<div *ngIf="authService.estaAutenticado()" class="lista">
-  <app-tarea-card
-    *ngFor="let tarea of tareaService.tareas()"
-    [tarea]="tarea"
-    (completar)="onCompletar($event)"
-    (eliminar)="onEliminar($event)">
-  </app-tarea-card>
+<div class="container">
+ 
 </div>
+
+<router-outlet></router-outlet>

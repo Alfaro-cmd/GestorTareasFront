@@ -16,17 +16,14 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   login(email: string, password: string) {
-    return this.http.post<any>('http://localhost:3000/login', {
-      email,
-      password
-    }).pipe(
-      tap(res => {
-        this._token.set(res.token);
-      })
-    );
-  }
-
-  logout() {
-    this._token.set(null);
-  }
+  return this.http.post<any>('http://localhost:5000/Auth/login', {
+    email,
+    password
+  }).pipe(
+    tap(res => {
+      console.log('TOKEN:', res);
+      this._token.set(res.token);
+    })
+  );
+}
 }
